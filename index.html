@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081626">
+  <meta name="description" content="Assista ao convite da Festa do Felipe e confira os detalhes da comemoração.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Felipe faz 8 anos!">
+  <meta property="og:description" content="Toque para assistir ao convite e confirmar presença.">
+  <meta property="og:url" content="https://cauanascimento2009-star.github.io/festa-felipe/">
+  <meta property="og:image" content="https://cauanascimento2009-star.github.io/festa-felipe/capa.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="720">
+  <meta property="og:image:height" content="1280">
+  <meta property="og:image:alt" content="Felipe em frente a um portal luminoso em um cenário de blocos.">
+  <title>Festa do Felipe | Convite</title>
+  <link rel="stylesheet" href="convite.css?v=presentes">
+  <script src="convite.js?v=presentes" defer></script>
+</head>
+<body>
+  <main class="convite" aria-label="Convite da Festa do Felipe">
+    <section class="tela capa" id="capa">
+      <img class="capa-imagem" src="capa.jpg" width="720" height="1280" alt="" fetchpriority="high">
+      <div class="titulo">
+        <p>Festa do</p>
+        <h1>Felipe</h1>
+      </div>
+      <a class="acao" id="abrir" href="festa-felipe.mp4">
+        <span class="play" aria-hidden="true"></span>
+        Abrir convite
+      </a>
+    </section>
+
+    <section class="tela exibicao" id="exibicao" aria-label="Vídeo do convite" hidden>
+      <video id="video" src="festa-felipe.mp4" poster="capa.jpg"
+        preload="none" playsinline tabindex="-1" aria-label="Convite em vídeo da Festa do Felipe"></video>
+      <button class="som-video so-computador" id="som-video" type="button">Silenciar vídeo</button>
+      <button class="pular" id="pular" type="button">Ver detalhes</button>
+      <div class="erro" id="erro" hidden>
+        <p>O vídeo não abriu.</p>
+        <a href="festa-felipe.mp4">Abrir o arquivo de vídeo</a>
+      </div>
+    </section>
+
+    <section class="tela detalhes" id="detalhes" aria-labelledby="titulo-detalhes" hidden>
+      <h2 class="so-leitor" id="titulo-detalhes" tabindex="-1">Felipe, 8 anos</h2>
+      <img class="arte-final" src="detalhes.png" width="941" height="1672"
+        alt="28 de novembro de 2026, das 18h às 22h.">
+      <a class="botao-arte confirmar"
+        href="https://wa.me/5519992458203?text=Oi!%20Confirmo%20minha%20presen%C3%A7a%20no%20anivers%C3%A1rio%20de%208%20anos%20do%20Felipe."
+        target="_blank" rel="noopener" aria-label="Confirmar presença pelo WhatsApp"></a>
+      <a class="botao-arte mapa" href="https://maps.app.goo.gl/UF6WQX8x8mvrrFa79"
+        target="_blank" rel="noopener" aria-label="Espaço Adoleta, abrir localização no Google Maps"></a>
+      <button class="botao-arte presentes" id="presentes" type="button"
+        aria-label="Sugestões de presentes"></button>
+      <div class="acoes-detalhes">
+        <button class="so-computador" id="musica" type="button">Tocar música</button>
+        <button id="rever" type="button">
+          <span class="play" aria-hidden="true"></span>
+          Assistir novamente
+        </button>
+      </div>
+    </section>
+
+    <section class="tela sugestoes" id="sugestoes" aria-labelledby="titulo-sugestoes" hidden>
+      <h2 class="so-leitor" id="titulo-sugestoes" tabindex="-1">Sugestões de presentes</h2>
+      <img class="arte-final" src="presentes.png" width="941" height="1672"
+        alt="Roupa tamanho 10, Robux, sapato tamanho 32 e brinquedos.">
+      <button class="botao-arte voltar" id="voltar" type="button"
+        aria-label="Voltar ao convite"></button>
+    </section>
+  </main>
+</body>
+</html>

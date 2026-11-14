@@ -1,0 +1,302 @@
+:root {
+  color-scheme: dark;
+  font-family: "Geist", "Segoe UI", system-ui, sans-serif;
+  background: #081626;
+  color: #fff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html, body {
+  overflow: hidden;
+  overflow: clip;
+  overscroll-behavior: none;
+}
+
+body {
+  --altura-tela: 100vh;
+  --altura-tela: 100dvh;
+  --fundo: url("capa.jpg");
+  position: fixed;
+  inset: 0;
+  isolation: isolate;
+  display: grid;
+  height: var(--altura-tela);
+  margin: 0;
+  place-items: center;
+  touch-action: pinch-zoom;
+}
+
+body::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(#07152242, #081322a6), var(--fundo) 50% 52% / cover;
+  filter: blur(36px);
+  transform: scale(1.15);
+  content: "";
+}
+
+.convite {
+  --proporcao: 9 / 16;
+  position: relative;
+  width: min(100%, calc(var(--altura-tela) * var(--proporcao)));
+  aspect-ratio: var(--proporcao);
+  overflow: hidden;
+  container-type: inline-size;
+  background: #081626;
+  box-shadow: 0 0 64px #07101e70;
+}
+
+.tela {
+  position: absolute;
+  inset: 0;
+}
+
+.capa-imagem, video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.capa::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #0a1b30e0, #0a1b3033 24%, transparent 36% 70%, #08132132 81%, #081321e8 100%);
+  pointer-events: none;
+  content: "";
+}
+
+.titulo {
+  position: absolute;
+  z-index: 1;
+  inset: 6% 5% auto;
+  text-align: center;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.titulo p {
+  margin: 0;
+  color: #c2faff;
+  font-size: 4.5cqw;
+  font-weight: 800;
+  letter-spacing: .36em;
+  text-indent: .36em;
+  text-shadow: 0 2px 12px #00151d;
+}
+
+.titulo h1 {
+  margin: 1.5cqw 0 0;
+  color: #ffe154;
+  font-family: "Archivo Black", "Arial Black", "Segoe UI Black", sans-serif;
+  font-size: 17cqw;
+  font-weight: 900;
+  letter-spacing: -.045em;
+  line-height: .98;
+  text-shadow: 0 .055em #bc591c, 0 .09em #552c22, 0 .14em .37em #061729cd;
+}
+
+button, a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.acao {
+  position: absolute;
+  z-index: 1;
+  right: 12%;
+  bottom: 6%;
+  left: 12%;
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: .7em;
+  padding: .75em .6em;
+  border: 2px solid #a8fbff;
+  border-radius: .62em;
+  background: #58e4f3;
+  color: #062431;
+  box-shadow: 0 .28em #11677c, 0 0 26px #43dcea60;
+  font-size: clamp(13px, 4.8cqw, 24px);
+  font-weight: 850;
+  line-height: 1.15;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.acao:hover {
+  background: #9ff6ff;
+}
+
+.acao:active {
+  transform: translateY(2px);
+}
+
+:is(button, a, video):focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.play {
+  width: 0;
+  height: 0;
+  border-block: .38em solid transparent;
+  border-inline-start: .62em solid currentColor;
+}
+
+.exibicao {
+  background: #000;
+}
+
+.pular, .som-video, .acoes-detalhes button {
+  padding: .4em .75em;
+  border: 1px solid #ffffff57;
+  border-radius: 10em;
+  background: #081321db;
+  color: #fff;
+  font-size: clamp(11px, 3.4cqw, 17px);
+  font-weight: 650;
+}
+
+.pular, .som-video {
+  position: absolute;
+  top: 2%;
+  min-height: 34px;
+}
+
+.pular {
+  right: 3.5%;
+}
+
+.som-video {
+  left: 3.5%;
+}
+
+:is(.pular, .som-video, .acoes-detalhes button):hover {
+  background: #142a3c;
+}
+
+.erro {
+  position: absolute;
+  top: 50%;
+  right: 8%;
+  left: 8%;
+  padding: .8em;
+  transform: translateY(-50%);
+  border-radius: 12px;
+  background: #081321;
+  text-align: center;
+}
+
+.erro p {
+  margin: 0 0 .45em;
+}
+
+.erro a {
+  color: #a8fbff;
+}
+
+body:has(.detalhes:not([hidden])) {
+  --fundo: url("detalhes.png");
+}
+
+body:has(.sugestoes:not([hidden])) {
+  --fundo: url("presentes.png");
+}
+
+.convite:has(:is(.detalhes, .sugestoes):not([hidden])) {
+  --proporcao: 941 / 1672;
+}
+
+.arte-final {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.so-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.botao-arte {
+  position: absolute;
+  left: 17.65%;
+  width: 66%;
+  height: 9.05%;
+  padding: 0;
+  border: 0;
+  border-radius: 4cqw;
+  background: transparent;
+}
+
+.botao-arte:hover {
+  background: #ffffff16;
+}
+
+.confirmar {
+  top: 65.31%;
+}
+
+.mapa {
+  top: 74.7%;
+}
+
+.presentes {
+  top: 83.95%;
+  height: 9.35%;
+}
+
+.voltar {
+  top: 86%;
+  left: 28.7%;
+  width: 41.7%;
+  height: 10%;
+}
+
+.acoes-detalhes {
+  position: absolute;
+  right: 4%;
+  bottom: 1%;
+  left: 4%;
+  display: flex;
+  height: 5.2%;
+  justify-content: space-between;
+  gap: .35em;
+}
+
+.acoes-detalhes button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6em;
+  padding-block: 0;
+  line-height: 1.1;
+}
+
+#rever {
+  margin-inline-start: auto;
+}
+
+@media not all and (min-width: 768px) and (hover: hover) and (pointer: fine) {
+  .som-video.so-computador, .acoes-detalhes .so-computador {
+    display: none;
+  }
+}
