@@ -210,7 +210,7 @@ button {
 }
 
 body:has(.detalhes:not([hidden])) {
-  --fundo: url("detalhes.png");
+  --fundo: url("detalhes.png?v=4d180a5a");
 }
 
 body:has(.sugestoes:not([hidden])) {
