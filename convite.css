@@ -161,7 +161,7 @@ button {
   background: #000;
 }
 
-.pular, .som-video, .acoes-detalhes button {
+.pular, .som-video, .rever, .musica {
   padding: .4em .75em;
   border: 1px solid #ffffff57;
   border-radius: 10em;
@@ -171,13 +171,13 @@ button {
   font-weight: 650;
 }
 
-.pular, .som-video {
+.pular, .som-video, .rever {
   position: absolute;
   top: 2%;
   min-height: 34px;
 }
 
-.pular {
+.pular, .rever {
   right: 3.5%;
 }
 
@@ -185,7 +185,7 @@ button {
   left: 3.5%;
 }
 
-:is(.pular, .som-video, .acoes-detalhes button):hover {
+:is(.pular, .som-video, .rever, .musica):hover {
   background: #142a3c;
 }
 
@@ -271,32 +271,23 @@ body:has(.sugestoes:not([hidden])) {
   height: 10%;
 }
 
-.acoes-detalhes {
+.musica {
   position: absolute;
-  right: 4%;
   bottom: 1%;
   left: 4%;
-  display: flex;
   height: 5.2%;
-  justify-content: space-between;
-  gap: .35em;
-}
-
-.acoes-detalhes button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .6em;
   padding-block: 0;
   line-height: 1.1;
 }
 
-#rever {
-  margin-inline-start: auto;
+.rever {
+  display: flex;
+  align-items: center;
+  gap: .6em;
 }
 
 @media not all and (min-width: 768px) and (hover: hover) and (pointer: fine) {
-  .som-video.so-computador, .acoes-detalhes .so-computador {
+  .so-computador {
     display: none;
   }
 }
